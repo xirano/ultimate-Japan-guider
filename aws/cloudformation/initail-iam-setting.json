@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Template for creating Initial IAM",
+    "Description": "Creating Initial IAM",
     "Resources": {
        "DevopsGroup" : {
           "Type" : "AWS::IAM::Group",
