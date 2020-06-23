@@ -1,0 +1,47 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Template for creating Initial IAM",
+    "Resources": {
+       "DevopsGroup" : {
+          "Type" : "AWS::IAM::Group",
+          "Properties" : {
+            "GroupName" : "Devops",
+            "ManagedPolicyArns" : [ "arn:aws:iam::aws:policy/AdministratorAccess" ],
+            "Path" : "/"
+          }
+       },
+        "YidingZhang" : {
+          "Type" : "AWS::IAM::User",
+          "Properties" : {
+              "UserName": "yiding.zhang",
+              "Groups" : [ {"Ref" : "DevopsGroup"} ],
+              "LoginProfile" : {
+                "Password" : "Simplex2020",
+                "PasswordResetRequired" : false
+              }
+          }
+       },  
+       "MaomaoFeng" : {
+        "Type" : "AWS::IAM::User",
+        "Properties" : {
+            "UserName": "maomao.feng",
+            "Groups" : [ {"Ref" : "DevopsGroup"} ],
+            "LoginProfile" : {
+                "Password" : "Simplex2020",
+                "PasswordResetRequired" : false
+            }
+        }
+       },   
+       "ZhenYan" : {
+        "Type" : "AWS::IAM::User",
+        "Properties" : {
+            "UserName": "zhen.yan",
+            "Groups" : [ {"Ref" : "DevopsGroup"} ],
+            "LoginProfile" : {
+                "Password" : "Simplex2020",
+                "PasswordResetRequired" : false
+            }
+        }
+       }     
+    }           
+ }  
